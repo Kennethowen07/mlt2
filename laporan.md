@@ -73,13 +73,13 @@ Variabel pada `Users.csv`
 
 **Sebaran rating dan makna nilai nol.** Nilai 0 muncul 716.109 kali atau 62,3 persen dari seluruh baris. Dokumentasi Ziegler menyatakan nilai ini menandai interaksi implisit, bukan penilaian rendah, sehingga tidak berada pada skala yang sama dengan 1 sampai 10. Setelah nilai 0 dikeluarkan tersisa 433.671 penilaian dengan rata-rata 7,601.
 
-![Sebaran rating eksplisit](https://raw.githubusercontent.com/USERNAME/REPO/main/images/sebaran-rating.png)
+![Sebaran rating eksplisit](https://raw.githubusercontent.com/Kennethowen07/mlt2/main/images/sebaran-rating.png)
 
 Sebarannya miring tajam ke kanan. Puncaknya pada nilai 8 sebanyak 103.736, sementara nilai 1 hanya muncul 1.770 kali. Nilai 1 sampai 4 digabung pun belum mencapai 20.000 dari 433.671 baris. Rentang efektif rating pada praktiknya sekitar 5 sampai 10, dan model yang dilatih di sini akan sulit mengenali buku yang benar-benar tidak disukai karena contohnya terlalu sedikit.
 
 **Kepadatan interaksi.** Dari 77.805 pengguna yang memberi rating eksplisit, 45.382 di antaranya hanya menilai satu buku. Dari 185.973 buku yang dinilai, 129.621 hanya menerima satu rating. Median kedua sisi sama-sama satu.
 
-![Sebaran jumlah rating per pengguna dan per buku](https://raw.githubusercontent.com/USERNAME/REPO/main/images/kepadatan-interaksi.png)
+![Sebaran jumlah rating per pengguna dan per buku](https://raw.githubusercontent.com/Kennethowen07/mlt2/main/images/kepadatan-interaksi.png)
 
 Sumbu tegak kedua grafik memakai skala logaritmik, karena tanpa itu batang selain yang pertama tidak terlihat sama sekali. Persentil ke-90 pengguna berada di 9 rating dan persentil ke-99 di 73 rating, sementara satu pengguna terekam menilai 8.524 buku. Di sisi buku, persentil ke-99 berada di 22 rating dengan nilai tertinggi 707. Kepadatan matriksnya 0,003 persen.
 
@@ -87,13 +87,13 @@ Bentuk ekor panjang ini menjadi temuan paling menentukan pada proyek, karena col
 
 **Anomali pada `Year-Of-Publication`.** Tiga baris memuat nama penerbit di kolom tahun, yaitu `DK Publishing Inc` dan `Gallimard`, akibat tanda kutip dalam judul yang menggeser seluruh kolom saat data aslinya dibentuk. Terdapat 4.618 baris bertahun 0 dan 23 baris bertahun setelah 2004 padahal data dikumpulkan pada tahun itu, salah satunya tertulis 2026. Batas bawahnya juga janggal, terdapat entri bertahun 1376.
 
-![Sebaran tahun terbit](https://raw.githubusercontent.com/USERNAME/REPO/main/images/tahun-terbit.png)
+![Sebaran tahun terbit](https://raw.githubusercontent.com/Kennethowen07/mlt2/main/images/tahun-terbit.png)
 
 Pada rentang wajar 1950 sampai 2004 terkumpul 266.374 judul dengan median 1996 dan tahun terbanyak 2002. Sebanyak 74,5 persen terbit sejak 1990, sehingga koleksinya condong ke terbitan baru pada masa data dikumpulkan. Ekornya menjulur ke kiri sampai dekade 1950-an tetapi tipis.
 
 **Kondisi kolom `Age`.** Sebanyak 110.762 dari 278.858 baris kosong, hampir empat puluh persen. Dari yang terisi, 1.248 berada di luar rentang wajar dengan nilai tertinggi 244 tahun.
 
-![Sebaran umur pengguna](https://raw.githubusercontent.com/USERNAME/REPO/main/images/umur-pengguna.png)
+![Sebaran umur pengguna](https://raw.githubusercontent.com/Kennethowen07/mlt2/main/images/umur-pengguna.png)
 
 Sisanya berpusat pada median 32 tahun dengan rata-rata 34,7 dan puncak di usia 24. Kolom ini tidak dipakai sebagai fitur pada kedua pendekatan, karena content based bersandar pada atribut buku dan collaborative pada pola rating.
 
