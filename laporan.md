@@ -175,7 +175,7 @@ Matriks pengguna kali buku berukuran 1.820 kali 2.030 disusun dari data latih, d
 
 Pemisahan bias sebelum faktorisasi diperlukan agar SVD tidak menghabiskan kapasitasnya untuk mempelajari kecenderungan yang sudah bisa dihitung langsung dengan rata-rata. Prediksi akhir adalah penjumlahan rata-rata global, kedua bias, dan hasil rekonstruksi, lalu dijepit ke rentang 1 sampai 10 untuk pelaporan galat. Untuk penyusunan peringkat top-N, skor sebelum penjepitan yang dipakai, karena 3,2 persen prediksi melebihi 10 dan penjepitan akan membuat banyak buku bernilai sama persis sehingga urutannya menjadi acak.
 
-Pengujian dilakukan pada **User-ID 29526**, yang menempati indeks 175 setelah penyandian dan memiliki 28 rating. Lima buku dengan penilaian tertinggi dari pengguna tersebut adalah `Divine Secrets of the Ya-Ya Sisterhood`, `Prodigal Summer`, `The Red Tent`, `Pope Joan`, dan satu judul lain, seluruhnya diberi nilai 10. Kelimanya fiksi dewasa bertema perempuan.
+Pengujian dilakukan pada **User-ID 29526**, yang menempati indeks 175 setelah penyandian dan memiliki 28 rating. Di antara buku yang ia beri nilai 10 terdapat `Girl With a Pearl Earring`, `Skipping Christmas`, dan `Prodigal Summer`, seluruhnya fiksi dewasa.
 
 Sepuluh rekomendasi teratas untuk User-ID 29526, disaring dari buku yang belum pernah ia nilai.
 
@@ -261,17 +261,17 @@ Hasil content based filtering, dihitung atas seluruh 1.847 buku dengan K sama de
 | Pemilihan acak sebagai tolok ukur | 0,0299 |
 | Penulis sama | 0,5225 |
 | Penerbit sama | 0,5541 |
-| Penulis atau penerbit sama | 0,7238 |
+| Penulis atau penerbit sama | 0,7237 |
 
-Sebanyak 861 dari 1.847 buku memperoleh Precision@5 sempurna, sedangkan 115 buku tidak memperoleh satu pun rekomendasi relevan.
+Sebanyak 860 dari 1.847 buku memperoleh Precision@5 sempurna, sedangkan 115 buku tidak memperoleh satu pun rekomendasi relevan.
 
 ### Pembahasan Hasil
 
 **Problem statement 1, merekomendasikan buku lain tanpa bergantung pada riwayat penilaian pengguna.**
 
-Tujuan ini tercapai. Content based filtering mencapai Precision@5 sebesar 0,7238, sekitar dua puluh empat kali lipat dibanding tolok ukur pemilihan acak yang hanya 0,0299. Sistem hanya membutuhkan satu judul sebagai masukan dan tidak menyentuh data rating sama sekali.
+Tujuan ini tercapai. Content based filtering mencapai Precision@5 sebesar 0,7237, sekitar dua puluh empat kali lipat dibanding tolok ukur pemilihan acak yang hanya 0,0299. Sistem hanya membutuhkan satu judul sebagai masukan dan tidak menyentuh data rating sama sekali.
 
-Batasannya terletak pada jenis kemiripan yang ditangkap. Sistem sangat kuat mengenali karya penulis yang sama, dan itu terlihat pada 861 buku yang memperoleh nilai sempurna. Namun sistem tidak memiliki cara mengenali kemiripan tema antar penulis berbeda, sehingga 115 buku sama sekali tidak mendapat rekomendasi relevan. Buku-buku itu umumnya karya penulis yang hanya muncul sekali dalam data dan diterbitkan penerbit kecil, sehingga tidak ada jangkar untuk dicocokkan. Menambahkan genre atau sinopsis akan mengatasi hal ini, tetapi Book-Crossing tidak menyediakannya.
+Batasannya terletak pada jenis kemiripan yang ditangkap. Sistem sangat kuat mengenali karya penulis yang sama, dan itu terlihat pada 860 buku yang memperoleh nilai sempurna. Yang belum tertangani adalah kemiripan tema antar penulis berbeda, sehingga 115 buku sama sekali tidak mendapat rekomendasi relevan. Buku-buku itu umumnya karya penulis yang hanya muncul sekali dalam data dan diterbitkan penerbit kecil, sehingga tidak ada jangkar untuk dicocokkan. Menambahkan genre atau sinopsis akan mengatasi hal ini, tetapi Book-Crossing tidak menyediakannya.
 
 **Problem statement 2, memprediksi kemungkinan pengguna menyukai buku yang belum pernah dinilai.**
 
